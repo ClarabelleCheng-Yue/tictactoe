@@ -95,7 +95,7 @@ whosTurn: shows on client the correct player's turn
 @return: string of DOM node
 */
 var whosTurn = function(idy) {
-  console.log('id in whosTurn: ', idy);
+
   var xTurn = '<span>Player <span class="red">X</span>, go!</span>';
   var oTurn = '<span>Player <span class="blue">O</span>, go!</span>';
 
@@ -121,29 +121,51 @@ go: starts the game by setting player id, showing who's turn on the page, and un
 */
 var go = function(idy, first) {
   idy = idy || 0;
-  console.log('idy from go: ', idy);
+
+  // if first move,
   if (first) {
+    // add message board to page
     var message = '<div class="message"><span id="msgTxt"></span></div><button onclick="done()">Done</button>';
     addElement(body, message);
+    // add click handlers to each gameboard box
     unlockBoard(idy);
   }
 
+  // show player's turn message
   var turn = whosTurn(idy);
   document.getElementById('msgTxt').innerHTML = turn;
 }
 
 /*
-done: 
+done: invokes setup for next player's turn
 */
 var done = function() {
+  var winMsg = '<p>Winner! <span id="winner"></span></p>'
+  var lastEle = storage[storage.length - 1];
+  var lastKey = parseInt(lastEle.classList[0]);
+  keys[lastKey] = lastEle;
+  console.log(typeof lastKey, 'number?'); // string
   // if current player won
+  if (isWon()) {
+    addElement(document.getElementById('msgTxt'), winMsg);
     // display winning message
-  // else 
+    if (typeof lastKey === 'number') {
+      if (lastKey % 2) {
+        addElement(document.getElementById('winner'), '<span>Player <span class="red">X</span>!</span>');
+      } else {
+        addElement(document.getElementById('winner'), '<span>Player <span class="blue">O</span>!</span>');
+      }
+    }
+  } else { // else
     // display message for next turn
     ++idTracker;
-    var lastEle = storage[storage.length - 1];
-    keys[lastEle.classList[0]] = lastEle;
     go(idTracker, false);
+  }
+}
+
+var isWon = function() {
+  // return true;
+  return false;
 }
 
 //make dashboard
