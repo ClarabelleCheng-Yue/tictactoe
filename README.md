@@ -1,4 +1,2 @@
 # tictactoe
-
-![alt tag](https://github.com/ClarabelleCheng-Yue/tictactoe/blob/master/assets/gameplay.png =300x300)
-<img src="https://github.com/ClarabelleCheng-Yue/tictactoe/blob/master/assets/gameplay.png" style="width: 30px"/>
+<img src="https://github.com/ClarabelleCheng-Yue/tictactoe/blob/master/assets/gameplay.png" width="30" height="30" />
