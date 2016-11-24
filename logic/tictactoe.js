@@ -144,7 +144,7 @@ var done = function() {
   var lastEle = storage[storage.length - 1];
   var lastKey = parseInt(lastEle.classList[0]);
   keys[lastKey] = lastEle;
-  console.log(typeof lastKey, 'number?'); // string
+
   // if current player won
   if (isWon()) {
     addElement(document.getElementById('msgTxt'), winMsg);
