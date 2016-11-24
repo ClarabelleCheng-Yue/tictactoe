@@ -8,17 +8,21 @@ body {
 
 table {
   margin: 2vh;
-  height: 50.3vh;
-  width: 50.3vh;
+  height: 51vh;
+  width: 51vh;
   box-shadow: 0vh 0vh 1vh 1vh #d3d3d3;
 }
 
 td {
-  width: 16.32vh;
-  height: 16.32vh;
+  width: 16.5vh;
+  height: 16.5vh;
   padding: 0vh;
-  border: 0.2vh solid #d3d3d3;
+  border: 0.1vh solid #d3d3d3;
   display: inline-block;
+}
+
+tr {
+  align-self: center;
 }
 
 #newRows {
