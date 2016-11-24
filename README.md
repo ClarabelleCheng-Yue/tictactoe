@@ -1,2 +1,2 @@
 # tictactoe
-<img src="https://github.com/ClarabelleCheng-Yue/tictactoe/blob/master/assets/gameplay.png" width="200" height="200" />
+<img src="https://github.com/ClarabelleCheng-Yue/tictactoe/blob/master/assets/gameplay.png" width="500" height="500" />
